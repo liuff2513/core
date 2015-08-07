@@ -13,7 +13,7 @@ public class CheckCodeServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response)throws ServletException,IOException{
 		System.out.println("1111111111");
-		//ÉèÖÃ²»»º´æÍ¼Æ¬
+		//è®¾ç½®ä¸ç¼“å­˜å›¾ç‰‡
 		response.setHeader("Pragma", "No-cache");
 		response.setHeader("Cache-Control", "No-cache");
 		response.setDateHeader("Expirs", 0);
@@ -25,7 +25,7 @@ public class CheckCodeServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		//ÉèÖÃ²»»º´æÍ¼Æ¬
+		//è®¾ç½®ä¸ç¼“å­˜å›¾ç‰‡
 		resp.setHeader("Pragma", "No-cache");
 		resp.setHeader("Cache-Control", "No-cache");
 		resp.setDateHeader("Expirs", 0);
