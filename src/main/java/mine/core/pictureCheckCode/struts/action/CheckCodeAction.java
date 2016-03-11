@@ -14,7 +14,7 @@ public class CheckCodeAction extends ActionSupport {
 	public void codePicture() throws Exception {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		HttpServletRequest request=ServletActionContext.getRequest();
-		// ÉèÖÃ²»»º´æÍ¼Æ¬
+		// è®¾ç½®ä¸ç¼“å­˜å›¾ç‰‡
 		response.setHeader("Pragma", "No-cache");
 		response.setHeader("Cache-Control", "No-cache");
 		response.setDateHeader("Expirs", 0);

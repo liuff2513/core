@@ -30,7 +30,7 @@ public class SessionServlet extends HttpServlet{
 		session.setAttribute("count", count);
 		session.setMaxInactiveInterval(30);
 		PrintWriter out=resp.getWriter();
-		out.write("Äú·ÃÎÊÁË·şÎñÆ÷ "+count+" ´Î");
+		out.write("æ‚¨è®¿é—®äº†æœåŠ¡å™¨ "+count+" æ¬¡");
 		out.close();
 	}
 	

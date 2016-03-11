@@ -8,19 +8,19 @@ public class ThreadTestCase extends Thread{
 	}
 	@Override
 	public void run() {
-		System.out.println("JVM Ö´ÐÐrun()¡­¡­"); 
+		System.out.println("JVM æ‰§è¡Œrun()â€¦â€¦"); 
 	}
 	@Override
 	public synchronized void start() {
 		// TODO Auto-generated method stub
-		System.out.println("Thread start()¡­¡­");
+		System.out.println("Thread start()â€¦â€¦");
 		super.start();
 	}
 	@SuppressWarnings("deprecation")
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		System.out.println("Thread destroy()¡­¡­");
+		System.out.println("Thread destroy()â€¦â€¦");
 		super.destroy();
 	}
 	@SuppressWarnings("static-access")

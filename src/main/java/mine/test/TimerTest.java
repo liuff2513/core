@@ -23,7 +23,7 @@ class TimePrinter implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		Date now=new Date();
 		System.out.println("At the tone,the time is "+now);
-		Toolkit.getDefaultToolkit().beep();//Ê¹»ú×Ó·¢³ößÙßÙµÄÌáÊ¾Òô
+		Toolkit.getDefaultToolkit().beep();//ä½¿æœºå­å‘å‡ºå“”å“”çš„æç¤ºéŸ³
 	}
 	
 }

@@ -20,22 +20,22 @@ import javax.servlet.http.HttpSession;
 public class CreatePictureCheckCode {
 	public static void getPictureCheckCode(HttpServletRequest request,
 			HttpServletResponse response)throws ServletException,IOException{
-		int width=86;//Ö¸¶¨ÑéÖ¤ÂëµÄ¿í¶È
-		int height=22;//Ö¸¶¨ÑéÖ¤ÂëµÄ¸ß¶È
+		int width=86;//æŒ‡å®šéªŒè¯ç çš„å®½åº¦
+		int height=22;//æŒ‡å®šéªŒè¯ç çš„é«˜åº¦
 		BufferedImage image=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
 		
 		Graphics g=image.getGraphics();
-		Graphics2D g2d=(Graphics2D)g;//´´½¨Graphics2D¶ÔÏó
+		Graphics2D g2d=(Graphics2D)g;//åˆ›å»ºGraphics2Då¯¹è±¡
 		
 		Random ran=new Random();
-		Font mFont=new Font("ºÚÌå",Font.BOLD,16);//¶¨ÒåÒ»×ÖÌåÑùÊ½
+		Font mFont=new Font("é»‘ä½“",Font.BOLD,16);//å®šä¹‰ä¸€å­—ä½“æ ·å¼
 		
 		g.setColor(RandColor.getRandColor(200, 255));
-		g.fillRect(0, 0, width, height);//»æÖÆ±³¾°
+		g.fillRect(0, 0, width, height);//ç»˜åˆ¶èƒŒæ™¯
 		g.setFont(mFont);
-		g.setColor(RandColor.getRandColor(180, 200));//ÉèÖÃ×ÖÌå
+		g.setColor(RandColor.getRandColor(180, 200));//è®¾ç½®å­—ä½“
 		
-		//»æÖÆ100¸ùÑÕÉ«ºÍÎ»ÖÃÈ«²¿ÎªËæ»ú²úÉúµÄÏßÌõ£¬¸ÃÏßÌõÎª2f
+		//ç»˜åˆ¶100æ ¹é¢œè‰²å’Œä½ç½®å…¨éƒ¨ä¸ºéšæœºäº§ç”Ÿçš„çº¿æ¡ï¼Œè¯¥çº¿æ¡ä¸º2f
 		for(int i=0;i<100;i++){
 			int x=ran.nextInt(width-1);
 			int y=ran.nextInt(height-1);
@@ -44,56 +44,56 @@ public class CreatePictureCheckCode {
 			BasicStroke bs=new BasicStroke(2f,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
 			Line2D line=new Line2D.Double(x,y,x+x1,y+y1);
 			g2d.setStroke(bs);
-			g2d.draw(line);//»æÖÆÖ±Ïß
+			g2d.draw(line);//ç»˜åˆ¶ç›´çº¿
 		}
 		String sRand="";
-		//Êä³öËæ»úµÄÑéÖ¤ÎÄ×Ö
+		//è¾“å‡ºéšæœºçš„éªŒè¯æ–‡å­—
 		String ctmp="";
 		int itmp=0;
 		for(int i=0;i<4;i++){
 //			ran=new Random(new Date().getTime()+i);
 			switch(ran.nextInt(4)){
-				case 1://Éú³ÉA~ZµÄ×ÖÄ¸
+				case 1://ç”ŸæˆA~Zçš„å­—æ¯
 					itmp=ran.nextInt(26)+65;
 					ctmp=String.valueOf((char)itmp);
 					break;
-				case 2://Éú³Éºº×Ö
+				case 2://ç”Ÿæˆæ±‰å­—
 					String[] rBase={"0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"};
-					//Éú³ÉµÚÒ»Î»µÄÇøÂë
-					int r1=ran.nextInt(3)+11;//Éú³É11~14Ö®¼äµÄËæ»úÊı
+					//ç”Ÿæˆç¬¬ä¸€ä½çš„åŒºç 
+					int r1=ran.nextInt(3)+11;//ç”Ÿæˆ11~14ä¹‹é—´çš„éšæœºæ•°
 					String str_r1=rBase[r1];
-					//Éú³ÉµÚ2Î»µÄÇøÂë
+					//ç”Ÿæˆç¬¬2ä½çš„åŒºç 
 					int r2;
 					if(r1==13){
-						r2=ran.nextInt(7);//Éú³É0~7Ö®¼äµÄËæ»úÊı
+						r2=ran.nextInt(7);//ç”Ÿæˆ0~7ä¹‹é—´çš„éšæœºæ•°
 					}else{
-						r2=ran.nextInt(16);//Éú³É0~16Ö®¼äµÄËæ»úÊı
+						r2=ran.nextInt(16);//ç”Ÿæˆ0~16ä¹‹é—´çš„éšæœºæ•°
 					}
 					String str_r2=rBase[r2];
-					//Éú³ÉµÚ1Î»µÄÎ»Âë
-					int r3=ran.nextInt(6)+10;//Éú³É10~16Ö®¼äµÄËæ»úÊı
+					//ç”Ÿæˆç¬¬1ä½çš„ä½ç 
+					int r3=ran.nextInt(6)+10;//ç”Ÿæˆ10~16ä¹‹é—´çš„éšæœºæ•°
 					String str_r3=rBase[r3];
-					//Éú³ÉµÚ2Î»µÄÎ»Âë
+					//ç”Ÿæˆç¬¬2ä½çš„ä½ç 
 					int r4;
 					if(r3==10){
-					r4=ran.nextInt(15)+1;//Éú³É1~16Ö®¼äµÄËæ»úÊı
+					r4=ran.nextInt(15)+1;//ç”Ÿæˆ1~16ä¹‹é—´çš„éšæœºæ•°
 					}else if(r3==15){
-						r4=ran.nextInt(15);//Éú³É1~15Ö®¼äµÄËæ»úÊı
+						r4=ran.nextInt(15);//ç”Ÿæˆ1~15ä¹‹é—´çš„éšæœºæ•°
 					}else{
-						r4=ran.nextInt(16);//Éú³É0~16Ö®¼äµÄËæ»úÊı
+						r4=ran.nextInt(16);//ç”Ÿæˆ0~16ä¹‹é—´çš„éšæœºæ•°
 					}
 					String str_r4=rBase[r4];
-					//½«Éú³ÉµÄ»úÄÚÂë×ª»»Îªºº×Ö
+					//å°†ç”Ÿæˆçš„æœºå†…ç è½¬æ¢ä¸ºæ±‰å­—
 					byte[] bytes=new byte[2];
-					//½«Éú³ÉµÄÇøÂë±£´æµ½×Ö½ÚÊı×éµÄµÚ1¸öÔªËØÖĞ
+					//å°†ç”Ÿæˆçš„åŒºç ä¿å­˜åˆ°å­—èŠ‚æ•°ç»„çš„ç¬¬1ä¸ªå…ƒç´ ä¸­
 					String str_r12=str_r1+str_r2;
 					int tempLow=Integer.parseInt(str_r12,16);
 					bytes[0]=(byte)tempLow;
-					//½«Éú³ÉµÄÎ»Âë±£´æµ½×Ö½ÚÊı×éµÄµÚ2¸öÔªËØÖĞ
+					//å°†ç”Ÿæˆçš„ä½ç ä¿å­˜åˆ°å­—èŠ‚æ•°ç»„çš„ç¬¬2ä¸ªå…ƒç´ ä¸­
 					String str_r34=str_r3+str_r4;
 					int tempHigh=Integer.parseInt(str_r34, 16);
 					bytes[1]=(byte)tempHigh;
-					ctmp=new String(bytes);//¸ù¾İ×Ö½ÚÊı×éÉú³Éºº×Ö
+					ctmp=new String(bytes);//æ ¹æ®å­—èŠ‚æ•°ç»„ç”Ÿæˆæ±‰å­—
 					break;
 				default:
 					itmp=ran.nextInt(10)+48;
@@ -103,11 +103,11 @@ public class CreatePictureCheckCode {
 			sRand+=ctmp;
 			Color color=new Color(20+ran.nextInt(110),20+ran.nextInt(110),20+ran.nextInt(110));
 			g.setColor(color);
-			//½«ÎÄ×ÖĞı×ªÖ¸¶¨½Ç¶È
+			//å°†æ–‡å­—æ—‹è½¬æŒ‡å®šè§’åº¦
 			Graphics2D g2d_word=(Graphics2D) g;
 			AffineTransform trans=new AffineTransform();
 			trans.rotate(ran.nextInt(45)*3.14/180,15*i+8,7);
-			//Ëõ·Å×ÖÌå
+			//ç¼©æ”¾å­—ä½“
 			float scaleSize=ran.nextFloat()+0.8f;
 			if(scaleSize>1f)
 				scaleSize=1f;
@@ -115,11 +115,11 @@ public class CreatePictureCheckCode {
 			g2d_word.setTransform(trans);
 			g.drawString(ctmp, 15*i+18, 14);
 		}
-		//½«Éú³ÉµÄÑéÖ¤Âë±£´æµ½SessionÖĞ¡£
+		//å°†ç”Ÿæˆçš„éªŒè¯ç ä¿å­˜åˆ°Sessionä¸­ã€‚
 		HttpSession session=request.getSession(true);
 		session.setAttribute("randCheckCode", sRand);
-		//Êä³öÉú³ÉµÄÑéÖ¤ÂëÍ¼Æ¬
-		g.dispose();//disponse·½·¨£º ÊÍ·Å´ËÍ¼ĞÎµÄÉÏÏÂÎÄÒÔ¼°ËüÊ¹ÓÃµÄËùÓĞÏµÍ³×ÊÔ´
+		//è¾“å‡ºç”Ÿæˆçš„éªŒè¯ç å›¾ç‰‡
+		g.dispose();//disponseæ–¹æ³•ï¼š é‡Šæ”¾æ­¤å›¾å½¢çš„ä¸Šä¸‹æ–‡ä»¥åŠå®ƒä½¿ç”¨çš„æ‰€æœ‰ç³»ç»Ÿèµ„æº
 		ImageIO.write(image, "JPEG", response.getOutputStream());
 	}
 }

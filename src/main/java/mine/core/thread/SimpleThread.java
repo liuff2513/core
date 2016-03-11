@@ -6,7 +6,7 @@ public class SimpleThread extends Thread{
 		super(name);
 	}
 	/**
-	 * 重写Thread的run方法
+	 * 閲嶅啓Thread鐨剅un鏂规硶
 	 */
 	@Override
 	public void run() { 

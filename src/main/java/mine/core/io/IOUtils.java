@@ -24,12 +24,12 @@ public class IOUtils {
 		writeNode("F://test/note3.txt", readNode(new File("F://test/note2.txt"), "txt"));
 	}
 	/**
-	 *  ¶ÁÈ¡ÎÄ¼ş
+	 *  è¯»å–æ–‡ä»¶
 	 */
 	public static String readNode(File file,String fileType){
 		String str=""; 
 		String resultStr="";
-		/*Èç¹ûfÎªÎÄ¼ş²¢ÇÒÎÄ¼şºó×ºÎªfileType*/
+		/*å¦‚æœfä¸ºæ–‡ä»¶å¹¶ä¸”æ–‡ä»¶åç¼€ä¸ºfileType*/
 		if(file.isFile()&&file.getName().endsWith("."+fileType)){
 			try {
 				InputStream is=new FileInputStream(file);
@@ -54,7 +54,7 @@ public class IOUtils {
 		return resultStr;
 	}
 	/**
-	 * Ğ´ÎÄ¼ş
+	 * å†™æ–‡ä»¶
 	 */
 	public static void writeNode(String dosPath,String data){
 		try {
@@ -117,6 +117,6 @@ public class IOUtils {
 				delNote(file);
 			}
 		}
-		System.out.println("ĞŞ¸ÄÍê±Ï\n´æ·ÅÄ¿Â¼ÔÚ " + rootDirectory.toUpperCase() + "ÅÌ£¡");
+		System.out.println("ä¿®æ”¹å®Œæ¯•\nå­˜æ”¾ç›®å½•åœ¨ " + rootDirectory.toUpperCase() + "ç›˜ï¼");
 	}
 }

@@ -13,7 +13,7 @@ public class ViewTestAction extends BaseAction{
 	public String execute() throws Exception {
 		test=(Test) coreService.getEntityById(Test.class, 1);
 		try{
-			throw new IllegalArgumentException("¹þ¹þ");
+			throw new IllegalArgumentException("å“ˆå“ˆ");
 		}catch(IllegalArgumentException e){
 			logger.error(e);
 		}

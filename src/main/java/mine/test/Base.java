@@ -8,10 +8,10 @@ public class Base {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		/**
-		 * count±äÁ¿±»staticĞŞÊÎÊ±ÏÂÃæbase1ºÍbase2¹«ÓÃcount
-		 * ½á¹ûÎª1 2
-		 * È¥µôstaticĞŞÊÎ
-		 * ½á¹ûÎª1 1
+		 * countå˜é‡è¢«staticä¿®é¥°æ—¶ä¸‹é¢base1å’Œbase2å…¬ç”¨count
+		 * ç»“æœä¸º1 2
+		 * å»æ‰staticä¿®é¥°
+		 * ç»“æœä¸º1 1
 		 */
 		Base  base1=new Base();
 		System.out.println(base1.count);

@@ -19,7 +19,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class Uploadify extends HttpServlet {
 	/**
-	 * ÎÄ¼şÉÏ´«
+	 * æ–‡ä»¶ä¸Šä¼ 
 	 */
 	private static final long serialVersionUID = 2384326745121073713L;
 
@@ -34,33 +34,33 @@ public class Uploadify extends HttpServlet {
 		System.out.println("-------------------UpLoadify-doPost");
 		System.out.println("-------------------QueryString::::"+ request.getQueryString());
 		System.out.println("*******************getParameter('folder'):::"+request.getParameter("folder"));
-		/*Èç¹ûÃ»ÓĞÉèÖÃfolderÔòreturn;·½·¨½áÊø*/
+		/*å¦‚æœæ²¡æœ‰è®¾ç½®folderåˆ™return;æ–¹æ³•ç»“æŸ*/
 		if (request.getParameter("folder") == null|| request.getParameter("folder") == "") {
 			System.out.println("-------------------request.getParameter('folder')::::"+ request.getParameter("folder") + " then return");
 			return;
 		}
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
-		/*»ñÈ¡ÏîÊµ¼ÊÄ¿¸ùÂ·¾¶*/
+		/*è·å–é¡¹å®é™…ç›®æ ¹è·¯å¾„*/
 		String path = this.getServletContext().getRealPath("/");
 		System.out.println("*******************getRealPath:::"+path);
-		/*»ñÈ¡ÎÄ¼ş´æ·ÅÎÄ¼ş¼ĞÃû³Æ*/
+		/*è·å–æ–‡ä»¶å­˜æ”¾æ–‡ä»¶å¤¹åç§°*/
 		String fileD = request.getParameter("folder");
-		/*ÉùÃ÷²¢³õÊ¼»¯ÎÄ¼ş×ÊÔ´´æ·ÅÂ·¾¶*/
+		/*å£°æ˜å¹¶åˆå§‹åŒ–æ–‡ä»¶èµ„æºå­˜æ”¾è·¯å¾„*/
 		String sourcePath = path + "upload/source/";
-		/*¶¨ÒåÉÏ´«ÎÄ¼ş´æ·ÅÂ·¾¶*/
+		/*å®šä¹‰ä¸Šä¼ æ–‡ä»¶å­˜æ”¾è·¯å¾„*/
 		path = path + "upload/" + fileD + "/";
 		System.out.println("-------------------UpLoadify-path::::" + path);
 		File folder = new File(path);
 		File sourceFolder = new File(sourcePath);
-		/*ÅĞ¶ÏÎÄ¼ş¼Ğ²»´æÔÚÔòĞÂ½¨ÎÄ¼ş¼Ğ*/
+		/*åˆ¤æ–­æ–‡ä»¶å¤¹ä¸å­˜åœ¨åˆ™æ–°å»ºæ–‡ä»¶å¤¹*/
 		if (!folder.exists()) {
-			System.out.println("-------------------UpLoadify::::" + "´´½¨ÎÄ¼ş¼Ğ"+ fileD);
+			System.out.println("-------------------UpLoadify::::" + "åˆ›å»ºæ–‡ä»¶å¤¹"+ fileD);
 			folder.mkdirs();
 		}
-		/*ÅĞ¶Ï×ÊÔ´ÎÄ¼ş¼Ğ²»´æÔÚÔòĞÂ½¨ÎÄ¼ş¼Ğ*/
+		/*åˆ¤æ–­èµ„æºæ–‡ä»¶å¤¹ä¸å­˜åœ¨åˆ™æ–°å»ºæ–‡ä»¶å¤¹*/
 		if (!sourceFolder.exists()) {
-			System.out.println("-------------------UpLoadify::::"+ "´´½¨ÎÄ¼ş¼Ğsource");
+			System.out.println("-------------------UpLoadify::::"+ "åˆ›å»ºæ–‡ä»¶å¤¹source");
 			sourceFolder.mkdirs();
 		}
 		ServletFileUpload sfu = new ServletFileUpload(new DiskFileItemFactory());
@@ -83,7 +83,7 @@ public class Uploadify extends HttpServlet {
 						continue;
 					}
 					if (sourceName.lastIndexOf(".") >= 0) {
-						// À©Õ¹Ãû
+						// æ‰©å±•å
 						name = sourceName.substring(0,
 								sourceName.lastIndexOf("."));
 						extName = sourceName.substring(sourceName
@@ -92,7 +92,7 @@ public class Uploadify extends HttpServlet {
 								.println("-------------------UpLoadify extName::::"
 										+ extName);
 					}
-					// ÎÄ¼şÃû¹æÔò Ç°×º + Ê±¼ä + Á½Î»Ëæ»úÊı + ÎÄ¼ş·ÖÀà(±êÊ¶Í¼Æ¬³ß´ç) + À©Õ¹Ãû
+					// æ–‡ä»¶åè§„åˆ™ å‰ç¼€ + æ—¶é—´ + ä¸¤ä½éšæœºæ•° + æ–‡ä»¶åˆ†ç±»(æ ‡è¯†å›¾ç‰‡å°ºå¯¸) + æ‰©å±•å
 					Calendar ca = Calendar.getInstance();
 					DecimalFormat df = new DecimalFormat();
 					df.setMinimumIntegerDigits(2);

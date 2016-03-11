@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.Random;
 
 /**
- * Éú³ÉËæ»úÑÕÉ«
+ * ç”Ÿæˆéšæœºé¢œè‰²
  * @author Administrator
  *
  */
@@ -15,9 +15,9 @@ public class RandColor {
 			s=255;
 		if(e>255)
 			e=255;
-		int r=s+ran.nextInt(e-s);//Ëæ»úÉú³ÉRGBÑÕÉ«ÖĞµÄrÖµ
-		int g=s+ran.nextInt(e-s);//Ëæ»úÉú³ÉRGBÑÕÉ«ÖĞµÄgÖµ
-		int b=s+ran.nextInt(e-s);//Ëæ»úÉú³ÉRGBÑÕÉ«ÖĞµÄbÖµ
+		int r=s+ran.nextInt(e-s);//éšæœºç”ŸæˆRGBé¢œè‰²ä¸­çš„rå€¼
+		int g=s+ran.nextInt(e-s);//éšæœºç”ŸæˆRGBé¢œè‰²ä¸­çš„gå€¼
+		int b=s+ran.nextInt(e-s);//éšæœºç”ŸæˆRGBé¢œè‰²ä¸­çš„bå€¼
 		return new Color(r,g,b);
 	}
 }

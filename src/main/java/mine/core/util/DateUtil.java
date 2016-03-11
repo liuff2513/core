@@ -7,8 +7,8 @@ import junit.framework.TestCase;
 
 public class DateUtil extends TestCase{
 	public void test1() throws ParseException{
-		String str="2014Äê5ÔÂ";
-		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyÄêMMÔÂ");
+		String str="2014å¹´5æœˆ";
+		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyå¹´MMæœˆ");
 		Date date=dateFormat.parse(str);
 		SimpleDateFormat resultFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String result=resultFormat.format(date);

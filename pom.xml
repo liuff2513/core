@@ -116,13 +116,14 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
+      <!-- 
       <plugin>
       	<groupId>org.apache.tomcat.maven</groupId>
-      	<artifactId>tomcat6-maven-plugin</artifactId>
+      	<artifactId>tomcat7-maven-plugin</artifactId>
       	<version>2.0</version>
       	<configuration>
       		<url>http://localhost:8808/manager</url>  
@@ -132,6 +133,7 @@
             <path>/${finalName}</path>  
       	</configuration>
       </plugin>  
+       -->
     </plugins>
   </build>
 </project>

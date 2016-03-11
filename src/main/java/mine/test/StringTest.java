@@ -24,7 +24,7 @@ class StringBufferInnerClass implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(buffer==null)
 			buffer=new StringBuffer();
-		buffer.append("\nÔö¼ÓÁËÒ»ĞĞ");
+		buffer.append("\nå¢åŠ äº†ä¸€è¡Œ");
 		System.out.println(buffer);
 		Date now=new Date();
 		System.out.println("At the tone,the time is "+now+" ");

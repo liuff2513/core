@@ -10,7 +10,7 @@ public class ThreadTestCase2 implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		System.out.println("JVM run¡­¡­");
+		System.out.println("JVM runâ€¦â€¦");
 	}
 	public static void main(String[] args) {
 		System.out.println(System.currentTimeMillis());
